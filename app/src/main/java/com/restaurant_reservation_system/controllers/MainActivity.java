@@ -93,23 +93,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Button btnArrivalTime= (Button) findViewById(R.id.btnArriveTime);
-        btnArrivalTime.setOnClickListener(new View.OnClickListener() {
+        Button btnWatingList= (Button) findViewById(R.id.btnWaitingList);
+        btnWatingList.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { // 노쇼 리스트
-                Intent intent = new Intent(getApplicationContext(), ListActivity.class);
-                startActivity(intent);
+            public void onClick(View v) { // 대기 리스트
+
             }
         });
 
-        Button btnStat= (Button) findViewById(R.id.btnStatistics);
-        btnStat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { // 통계
-                Intent intent = new Intent(getApplicationContext(), StaticisActivity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 
     public boolean match() {
@@ -183,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                String site = "http://192.168.0.84/reservation.php";
+                String site = "http://192.168.0.103/reservation.php";
                 URL url = new URL(site);
                 //접속
                 URLConnection conn = url.openConnection();
